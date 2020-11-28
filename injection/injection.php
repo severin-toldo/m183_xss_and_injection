@@ -1,9 +1,10 @@
 <?php
-    include '../../header.php';
+    include '../header.php';
+    require_once("../MySQL.php");
 ?>
 <div class='login-container'>
     <div class='login-wrapper'>
-        <form action="reflected_xss_solution.php"
+        <form action="injection.php"
               method="POST">
             <h1 class="login-form-title pb-2">Login</h1>
             <div class="form-group">
@@ -24,18 +25,20 @@
         </form>
     </div>
 </div>
-<?php
-    // Example: <script>alert('Reflected XSS');</script>
+<div class="m-5">
+    <?php
+        // Example: input'; INSERT INTO user (username, password) VALUES ('new', 'user');
+        $username = isset($_POST['username']) ? $_POST['username'] : '';
+        $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    // https://stackoverflow.com/questions/7232793/should-i-use-both-striptags-and-htmlspecialchars-to-prevent-xss
-    $username = isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '';
-    $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : '';
-
-    echo '<b>Output:</b><br/>';
-    echo $username . '<br/>';
-    echo $password . '<br/>';
-?>
+        $sql = "SELECT * FROM user where username = '%s' and password = '%s'";
+        $sql = sprintf($sql, $username, $password);
 
 
+        echo '<b>Output:</b><br/>';
+        echo 'Query: ' . $sql . '<br>';
 
-
+        $mysql = new MySQL();
+        $mysql->executeQuery($sql);
+    ?>
+</div>
