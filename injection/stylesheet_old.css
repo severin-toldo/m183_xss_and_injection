@@ -1,0 +1,26 @@
+.container-login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+}
+
+.wrap-login {
+    width: 500px;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 50px 40px 35px 40px;
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.login-form-title {
+    display: block;
+    font-family: Poppins-Bold;
+    font-size: 36px;
+    color: #333333;
+    line-height: 1.5;
+    text-align: center;
+}
