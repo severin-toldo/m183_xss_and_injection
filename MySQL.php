@@ -50,6 +50,10 @@ class MySQL {
         $this->conn->close();
     }
 
+    public function getConn() {
+        return $this->conn;
+    }
+
     private function printDivider() {
         echo '---------------------------------- <br/>';
     }
