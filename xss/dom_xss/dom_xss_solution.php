@@ -15,11 +15,11 @@
     const articleContentP = document.getElementById('articleContent');
 
     const urlParams = new URLSearchParams(window.location.search);
-    const articleTitle = urlParams.get('title'); // Source
+    const articleTitle = urlParams.get('title');
 
     if (articleTitle) {
-        articleTitleH1.innerHTML = capitalizeFirstLetter(articleTitle);  // Sink
-        articleContentP.innerHTML = getContentByArticleTitle(articleTitle);
+        articleTitleH1.innerText = capitalizeFirstLetter(articleTitle);
+        articleContentP.innerText = getContentByArticleTitle(articleTitle);
     }
 
     function getContentByArticleTitle(title) {
