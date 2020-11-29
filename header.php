@@ -11,6 +11,8 @@
             <a class="nav-item nav-link" href="/m183_xss_and_injection/xss/reflected_xss/reflected_xss_solution.php">Reflected XSS - Solution</a>
             <a class="nav-item nav-link" href="/m183_xss_and_injection/xss/stored_xss/stored_xss.php">Stored XSS</a>
             <a class="nav-item nav-link" href="/m183_xss_and_injection/xss/stored_xss/stored_xss_solution.php">Stored XSS - Solution</a>
+            <a class="nav-item nav-link" href="/m183_xss_and_injection/xss/dom_xss/dom_xss.php">DOM XSS</a>
+            <a class="nav-item nav-link" href="/m183_xss_and_injection/xss/dom_xss/dom_xss_solution.php">DOM XSS - Solution</a>
             <a class="nav-item nav-link" href="/m183_xss_and_injection/injection/injection.php">Injection</a>
             <a class="nav-item nav-link" href="/m183_xss_and_injection/injection/injection_solution.php">Injection - Solution</a>
         </div>
