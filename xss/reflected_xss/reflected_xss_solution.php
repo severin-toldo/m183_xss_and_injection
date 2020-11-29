@@ -1,8 +1,8 @@
 <?php
     include '../../header.php';
 ?>
-<div class='login-container'>
-    <div class='login-wrapper'>
+<div class="login-container">
+    <div class="login-wrapper">
         <form action="reflected_xss_solution.php"
               method="POST">
             <h1 class="login-form-title pb-2">Login</h1>

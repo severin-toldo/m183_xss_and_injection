@@ -1,9 +1,9 @@
 <?php
     include '../header.php';
-    require_once("../MySQL.php");
+    require_once('../UserRepository.php');
 ?>
-<div class='login-container'>
-    <div class='login-wrapper'>
+<div class="login-container">
+    <div class="login-wrapper">
         <form action="injection.php"
               method="POST">
             <h1 class="login-form-title pb-2">Login</h1>
@@ -38,7 +38,9 @@
         echo '<b>Output:</b><br/>';
         echo 'Query: ' . $sql . '<br>';
 
-        $mysql = new MySQL();
-        $mysql->executeQuery($sql);
+        $userRepository = new UserRepository();
+        $userRepository->executeQuery($sql);
+        $users = $userRepository->executeQuery('SELECT * FROM user');
+        $userRepository->printUsers($users);
     ?>
 </div>

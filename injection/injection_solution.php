@@ -1,9 +1,9 @@
 <?php
     include '../header.php';
-    require_once("../MySQL.php");
+    require_once('../UserRepository.php');
 ?>
-<div class='login-container'>
-    <div class='login-wrapper'>
+<div class="login-container">
+    <div class="login-wrapper">
         <form action="injection_solution.php"
               method="POST">
             <h1 class="login-form-title pb-2">Login</h1>
@@ -27,18 +27,20 @@
 </div>
 <div class="m-5">
     <?php
-        $mysql = new MySQL();
+        $userRepository = new UserRepository();
 
         // Example: input'; INSERT INTO user (username, password) VALUES ('new', 'user');
         $username = isset($_POST['username']) ? $_POST['username'] : '';
         $password = isset($_POST['password']) ? $_POST['password'] : '';
 
         $sql = "SELECT * FROM user where username = '%s' and password = '%s'";
-        $sql = sprintf($sql, mysqli_real_escape_string($mysql->getConn(), $username), mysqli_real_escape_string($mysql->getConn(), $password));
+        $sql = sprintf($sql, mysqli_real_escape_string($userRepository->getConn(), $username), mysqli_real_escape_string($userRepository->getConn(), $password));
 
         echo '<b>Output:</b><br/>';
         echo 'Query: ' . $sql . '<br>';
 
-        $mysql->executeQuery($sql);
+        $userRepository->executeQuery($sql);
+        $users = $userRepository->executeQuery('SELECT * FROM user');
+        $userRepository->printUsers($users);
     ?>
 </div>
