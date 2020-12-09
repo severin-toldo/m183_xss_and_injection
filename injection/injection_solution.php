@@ -15,7 +15,7 @@
                        required>
             </div>
             <div class="form-group">
-                <input type="password"
+                <input type="text"
                        class="form-control"
                        name="password"
                        placeholder="Password"
